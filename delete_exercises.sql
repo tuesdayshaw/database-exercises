@@ -1,6 +1,11 @@
 USE codeup_test_db;
 
-SELECT name FROM albums WHERE release_date > 1991;
-SELECT name FROM albums WHERE genre = '%disco%';
-SELECT artist FROM albums WHERE artist = 'Meatloaf';
+SELECT 'All albums released after 1991 album table:' AS '';
+DELETE FROM albums WHERE release_date > 1991;
+
+SELECT 'All albums within the ''disco'' genre in album table:' AS '';
+DELETE FROM albums WHERE id = 7;
+
+SELECT 'All albums released by Meatloaf in album table:' AS '';
+DELETE FROM albums WHERE artist = 'Meatloaf';
 
