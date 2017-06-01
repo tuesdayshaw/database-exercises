@@ -10,16 +10,18 @@ WHERE(
 ORDER BY last_name, first_name;
 
 SELECT 'All employees whose last name starts OR ends with an E:' AS '';
-SELECT first_name, last_name
+SELECT emp_no, first_name, last_name
 FROM employees
 WHERE last_name LIKE 'E%'
-      OR last_name LIKE '%E';
+      OR last_name LIKE '%E'
+ORDER BY emp_no;
 
 SELECT 'All employees whose last name starts AND ends with an E:' AS '';
-SELECT first_name, last_name
+SELECT emp_no, first_name, last_name
 FROM employees
 WHERE last_name LIKE 'E%'
-      AND last_name LIKE '%E';
+      AND last_name LIKE '%E'
+ORDER BY emp_no;
 
 SELECT 'All employees who were hired between 1990 and 1999:' AS '';
 SELECT emp_no, first_name, last_name
