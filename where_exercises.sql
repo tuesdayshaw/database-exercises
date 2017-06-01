@@ -11,7 +11,8 @@ AND gender = 'M';
 SELECT 'All employees whose last name begins with an E:' AS '';
 SELECT first_name, last_name
 FROM employees
-WHERE last_name LIKE 'E%';
+WHERE last_name LIKE 'E%'
+OR last_name LIKE '%E';
 
 SELECT 'All employees who were hired between 1990 and 1999:' AS '';
 SELECT emp_no, first_name, last_name
