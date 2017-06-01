@@ -1,10 +1,10 @@
 SELECT 'All employees whose first name is either Irena, Vidya or Maya:' AS '';
-SELECT first_name
+SELECT first_name, last_name
 FROM employees
 WHERE first_name IN ('Irena', 'Vidya', 'Maya');
 
 SELECT 'All employees whose last name begins with an E:' AS '';
-SELECT last_name
+SELECT first_name, last_name
 FROM employees
 WHERE last_name LIKE 'E%';
 
@@ -19,6 +19,6 @@ FROM employees
 WHERE birth_date LIKE '%-12-25';
 
 SELECT 'All employees whose last name includes a q:' AS '';
-SELECT last_name
+SELECT first_name, last_name
 FROM employees
 WHERE last_name LIKE '%q%';
