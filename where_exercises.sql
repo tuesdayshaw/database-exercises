@@ -36,7 +36,7 @@ FROM employees
 WHERE hire_date LIKE '199%'
 AND birth_date LIKE '%-12-25';
 
-SELECT 'All employees whose last name includes a q:' AS '';
+SELECT 'All employees whose last name includes a q and not qu:' AS '';
 SELECT first_name, last_name
 FROM employees
 WHERE last_name LIKE '%q%'
