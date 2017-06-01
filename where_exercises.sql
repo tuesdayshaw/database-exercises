@@ -1,7 +1,9 @@
 SELECT 'All employees whose first name is either Irena, Vidya or Maya:' AS '';
 SELECT first_name, last_name
 FROM employees
-WHERE first_name IN ('Irena', 'Vidya', 'Maya');
+WHERE first_name = 'Irena'
+OR first_name = 'Vidya'
+OR first_name = 'Maya';
 
 SELECT 'All employees whose last name begins with an E:' AS '';
 SELECT first_name, last_name
