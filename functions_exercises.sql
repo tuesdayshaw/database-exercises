@@ -9,19 +9,12 @@ WHERE(
      )
 GROUP BY gender;
 
-SELECT 'All employees whose last name starts OR ends with an E:' AS '';
-SELECT emp_no, first_name, last_name
-FROM employees
-WHERE last_name LIKE 'E%'
-      OR last_name LIKE '%E'
-ORDER BY emp_no DESC;
 
 SELECT 'All employees whose last name starts AND ends with an E:' AS '';
-SELECT emp_no, first_name, last_name
+SELECT CONCAT(first_name, ' ', last_name)
 FROM employees
 WHERE last_name LIKE 'E%'
-      AND last_name LIKE '%E'
-ORDER BY emp_no DESC;
+      AND last_name LIKE '%E';
 
 SELECT 'All employees who were hired between 1990 and 1999:' AS '';
 SELECT emp_no, first_name, last_name
