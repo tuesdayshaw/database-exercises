@@ -39,5 +39,7 @@ RIGHT JOIN roles ON users.role_id = roles.id;
 
 SELECT count(*), roles.name
 FROM users
-Right JOIN roles ON users.role_id = roles.id
+RIGHT JOIN roles ON users.role_id = roles.id
 GROUP BY roles.name;
+
+
