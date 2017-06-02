@@ -16,22 +16,13 @@ FROM employees
 WHERE last_name LIKE 'E%'
       AND last_name LIKE '%E';
 
-SELECT 'All employees who were hired between 1990 and 1999:' AS '';
-SELECT emp_no, first_name, last_name
-FROM employees
-WHERE hire_date LIKE '199%';
-
-SELECT 'All employees who were born on Christmas:' AS '';
-SELECT emp_no, first_name, last_name
-FROM employees
-WHERE birth_date LIKE '%-12-25';
 
 SELECT 'All employees who were hired between 1990 and 1999 AND born on Christmas:' AS '';
-SELECT emp_no, first_name, last_name
-FROM employees
+SELECT DATEDIFF(curdate(), hire_date), first_name, last_name
+FROM employees.employees
 WHERE hire_date LIKE '199%'
-      AND birth_date LIKE '%-12-25'
-ORDER BY birth_date ASC, hire_date DESC;
+      AND birth_date LIKE '%-12-25';
+
 
 SELECT 'All employees whose last name includes a q and not qu:' AS '';
 SELECT first_name, last_name
