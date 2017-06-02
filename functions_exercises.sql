@@ -25,9 +25,10 @@ WHERE hire_date LIKE '199%'
 
 
 SELECT 'All employees whose last name includes a q and not qu:' AS '';
-SELECT COUNT(DISTINCT first_name), last_name
+SELECT COUNT(*), CONCAT(first_name, ' ', last_name) AS full_name
 FROM employees
 WHERE last_name LIKE '%q%'
       AND last_name NOT LIKE '%qu%'
-GROUP BY last_name;
+GROUP BY CONCAT(first_name, ' ', last_name)
+ORDER BY count(*) DESC;
 
