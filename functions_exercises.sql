@@ -18,7 +18,7 @@ WHERE last_name LIKE 'E%'
 
 
 SELECT 'All employees who were hired between 1990 and 1999 AND born on Christmas:' AS '';
-SELECT DATEDIFF(curdate(), hire_date), first_name, last_name
+SELECT DATEDIFF(curdate(), hire_date) AS 'Days worked for company', CONCAT(first_name, ' ', last_name) AS full_name
 FROM employees.employees
 WHERE hire_date LIKE '199%'
       AND birth_date LIKE '%-12-25';
