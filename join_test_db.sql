@@ -32,4 +32,7 @@ INSERT INTO users (name, email, role_id) VALUES
   ('tuesday', 'tuesday@mail.com', null),
   ('mark', 'mark@mail.com', 2),
   ('ryan', 'ryan@mail.com', 2),
-  ('pete', 'pete@mail.com', 2)
+  ('pete', 'pete@mail.com', 2);
+
+SELECT * FROM users
+RIGHT JOIN roles ON users.role_id = roles.id;
