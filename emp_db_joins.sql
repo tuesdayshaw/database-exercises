@@ -1,3 +1,5 @@
+use employees;
+
 
 SELECT *
 FROM employees
@@ -38,11 +40,11 @@ JOIN departments as d on dm.dept_no = d.dept_no
 WHERE s.to_date > NOW()
 AND dm.to_date > NOW();
 
-
+#Bonus: Not finished
 SELECT concat(e.first_name, ' ', e.last_name) AS 'Employee Name', d.dept_name as 'Department Name', concat(e.first_name, ' ', e.last_name) AS 'Manager Name'
 FROM employees as e
   Left JOIN dept_manager as dm
     ON e.emp_no = dm.emp_no
   JOIN departments as d
     ON dm.dept_no = d.dept_no
-WHERE dm.to_date > now();
+WHERE dm.to_date > now() = 'Manager Name';
