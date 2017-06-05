@@ -40,11 +40,19 @@ JOIN departments as d on dm.dept_no = d.dept_no
 WHERE s.to_date > NOW()
 AND dm.to_date > NOW();
 
-#Bonus: Not finished
-SELECT concat(e.first_name, ' ', e.last_name) AS 'Employee Name', d.dept_name as 'Department Name', concat(e.first_name, ' ', e.last_name) AS 'Manager Name'
+#Bonus Find the names of all current employees, their department name, and their current manager's name.
+
+SELECT concat(e.first_name, ' ', e.last_name) AS 'Employee Name',
+  d.dept_name as 'Department Name',
+  concat(e2.first_name, ' ', e2.last_name) AS 'Manager Name'
 FROM employees as e
-  Left JOIN dept_manager as dm
-    ON e.emp_no = dm.emp_no
+  JOIN dept_emp as de
+    ON e.emp_no = de.emp_no
   JOIN departments as d
-    ON dm.dept_no = d.dept_no
-WHERE dm.to_date > now() = 'Manager Name';
+    ON de.dept_no = d.dept_no
+  JOIN dept_manager as dm
+  ON d.dept_no = dm.dept_no
+  JOIN employees as e2
+  on dm.emp_no = e2.emp_no
+WHERE de.to_date > now()
+and dm.to_date > now();
